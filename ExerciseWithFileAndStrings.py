@@ -23,8 +23,55 @@ Create a list Y2 that will contain the sine of each value stored in X2
 
 Once the 4 lists will be created I will show you how to plot the corresponding points (X1,Y1, X2,Y2).
 """
+import math
 
-myfile=open("data.txt")
+X1=[]
+X2=[]
+Y1=[] # Will be the cosine of X1
+Y2=[] # Will be the sine of X2
 
-for line in myfile:
-    print(line)
+dataFile=open("data.txt")
+
+for line in dataFile:
+    # line= "   x1:0.34;x2:0.56\n" 
+    line=line.replace(":", ";")
+    # line= "   x1;0.34;x2;0.56\n" 
+    result=line.split(";")
+    # result = ['  x1', '0.34', 'x2', '0.56\n']
+    
+    if len(result) == 4:
+        v1=float(result[1])
+        v2=float(result[3])
+        X1.append(v1) 
+        X2.append(v2) 
+    else:
+        print("The line:", line, "does not have the expected format!")
+
+for e in X1:
+    Y1.append(math.cos(e))
+    
+for e in X2:
+    Y2.append(math.sin(e))
+    
+print("X1:", X1)
+print("X2:", X2)
+print("Y1:", Y1)
+print("Y2:", Y2)
+
+# pip install matplotlib
+# conda install module-name
+
+# import matplotlib.pyplot as plt
+
+# plt.plot(X1, Y1, label="Cosine")
+# plt.plot(X2, Y2, label="Sine")
+# plt.title("A title")
+# plt.legend()
+# plt.show()
+
+# plt.xlabel("X Label")
+# plt.ylabel("Y Label")
+# plt.title("A title")
+# plt.legend()
+# plt.savefig("data.jpg")
+# plt.show()
