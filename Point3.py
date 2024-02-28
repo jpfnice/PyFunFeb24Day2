@@ -57,48 +57,36 @@ class Point:
         return self.x == other.x and self.y == other.y 
     
 p1=Point(1,2)
-
-# 1) p1=Point.__new__()
-# 2) p1.__init__(1,2)
-# 3) __init__(p1,1,2)
-
 print(p1) # <1,2>
-
-# 1) print(str(p1))
-# 2) print(p1.__repr__())
-# 3) print(__repr__(p1))
-
-print(p1.x) # 1
-print(p1.y) # 2
-p1.x=4
-print(p1) # <4,2>
-
-p2=Point(0,3)
-print(p2) # <0,3>
-
-p3=p1+p2
-# 1) p3=p1.__add__(p2)
-# 2) p3=__add__(p1, p2)
-
-print(p3) # <4,5>
-
-result=p1.distance(p2)
-print(f"Distance between {p1} and {p2} is {result}")
-print(p1)
-p2.x=4
-p2.y=5
+p2=p1
+print(p2) # <1,2>
+p2.x=45
 print(p2)
-if p1 == p2:
-#if p1.__eq__(p2):
-    print("Equal")
-else:
-    print("Different")
+print(p1)
+print(id(p1), id(p2))
 
-p4=Point()
-print(p4)
+import copy
+p2=copy.copy(p1)
 
-p5=p4+6
-print(p5)
+print(p2) # <1,2>
+p2.x=100
+print(p2)
+print(p1)
+print(id(p1), id(p2))
 
-p5.clear()
-print(p5)
+
+l1=[3,4]
+l2=l1
+l2.append(10)
+print(id(l1), id(l2))
+l2=l1.copy()
+l2.append(30)
+print(l1)
+print(l2)
+print(id(l1), id(l2))
+
+l1=[23,45]
+l2=l1
+del l1
+del l2
+
