@@ -15,11 +15,23 @@
         divisor of number, you can return True: "number" is a 
         prime number
 """
-   
 
 def isPrime(number):
-    # To be completed
-    return True
+    if isinstance(number, int):        
+        if number > 1:
+            divisor=2
+            while divisor < number:
+                if number % divisor == 0:
+                    return False
+                divisor = divisor + 1
+            
+            return True
+        else:
+            return False
+    else:
+        return False    # In this case a better option is to raise
+                        # an exception (this will be covered later)
+   
 
 tests=[-1,2,4,5,6,7,11,26,27,1233]
 
