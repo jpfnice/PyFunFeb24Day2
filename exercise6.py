@@ -17,3 +17,14 @@
 """
    
 
+def isPrime(number):
+    # To be completed
+    return True
+
+tests=[-1,2,4,5,6,7,11,26,27,1233]
+
+for e in tests:
+    if isPrime(e):
+        print(e, "is a prime number")
+    else: 
+        print(e,"is NOT a prime number")
