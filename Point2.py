@@ -1,3 +1,21 @@
+"""
+1) Update the class Point in order to give the possibility to create a Point with either 0 or 2 arguments
+Ex:
+    p=Point()
+    print(p) # <0,0>
+    p=Point(2,3)
+    print(p) # <2,3>
+
+2) Update the methods __add__() in order to give the possibility to add a Point with Point but also a Point with an int
+    
+3) Add a method clear(): it's purpose is to reset the coordinates of a Point to 0:
+    p=Point(2,3)
+    print(p) # <2,3>
+    p.clear()
+    print(p) # <0,0>
+
+"""
+
 import math
 
 class Point: 
