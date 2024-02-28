@@ -1,6 +1,6 @@
 """
     Define a function addList() which purpose is to add 2 lists
-    of numbers given as argument, element by element.
+    of numbers given as arguments, element by element.
     
     Example:
         l1=[5,6,3]
